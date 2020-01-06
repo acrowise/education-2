@@ -87,7 +87,7 @@ func CreateChannel(sdk *fabsdk.FabricSDK, info *InitInfo) error {
 }
 
 func InstallAndInstantiateCC(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Client, error) {
-	fmt.Println("開始安裝智能合約(Chaincode)......")
+	fmt.Println("開始安裝智能合約(Chaincode)...")
 	// creates new go lang chaincode package
 	ccPkg, err := gopackager.NewCCPackage(info.ChaincodePath, info.ChaincodeGoPath)
 	if err != nil {
@@ -102,8 +102,8 @@ func InstallAndInstantiateCC(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Cl
 		return nil, fmt.Errorf("安裝智能合約(Chaincode)失敗!: %v", err)
 	}
 
-	fmt.Println("安裝智能合約(Chaincode)成功!")
-	fmt.Println("開始實例化智能合約(Chaincode)......")
+	fmt.Println("安裝智能合約成功!")
+	fmt.Println("開始實例化智能合約...")
 
 	//  returns a policy that requires one valid
 	ccPolicy := cauthdsl.SignedByAnyMember([]string{"org1.kevin.kongyixueyuan.com"})
@@ -115,7 +115,7 @@ func InstallAndInstantiateCC(sdk *fabsdk.FabricSDK, info *InitInfo) (*channel.Cl
 		return nil, fmt.Errorf("實例化智能合約(Chaincode)失敗!: %v", err)
 	}
 
-	fmt.Println("實例化智能合約(Chaincode)成功!")
+	fmt.Println("實例化智能合約成功!")
 
 	clientChannelContext := sdk.ChannelContext(info.ChannelID, fabsdk.WithUser(info.UserName), fabsdk.WithOrg(info.OrgName))
 	// returns a Client instance. Channel client can query chaincode, execute chaincode and register/unregister for chaincode events on specific channel.

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>help</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="/static/css/reset.css" rel="stylesheet">
+    <!-- Bootstrap3.3.5 CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/help.css" rel="stylesheet"></head>
+  </head>
+  <body>
+    <div class="container">
+      <div class="m_yah"><a href="/index">首頁</a> &gt; 幫助中心</div>
+      <div class="m_s_l" id="leftMenu">
+
+        <div class="m_s_l_menu">查詢範圍</div>
+        <ul class="m_s_l_ul">
+          <li class="leftMenu0 index">
+            <span class="icon_list">&nbsp;</span>
+            <a href="javascript:void(0);">學籍學歷查詢範圍</a>
+          </li>
+        </ul>
+
+        <div class="m_s_l_menu">學歷查詢</div>
+        <ul class="m_s_l_ul">
+          <li class="leftMenu1">
+            <span class="icon_list">&nbsp;</span>
+            <a href="/queryPage">根據證書編號查詢</a>
+          </li>
+          <li class="leftMenu2">
+            <span class="icon_list">&nbsp;</span>
+            <a href="/queryPage2">根據身份證號查詢</a>
+          </li>
+          {{if eq .CurrentUser.IsAdmin "T"}}
+            <li class="leftMenu3">
+              <span class="icon_list">&nbsp;</span>
+              <a href="/addEduInfo">增加學歷資訊</a>
+            </li>
+          {{end}}
+          <li class="leftMenu4">
+            <span class="icon_list">&nbsp;</span>
+            <a href="javascript:void(0);">企業用戶查詢</a>
+          </li>
+          <li class="leftMenu5">
+            <span class="icon_list">&nbsp;</span>
+            <a href="/loginout">退出</a>
+          </li>
+        </ul>
+
+        <div class="m_s_l_menu">學籍查詢</div>
+        <ul class="m_s_l_ul">
+          <li class="onread leftMenu5">
+            <span class="icon_list">&nbsp;</span>
+            <a href="javascript:void(0);">學籍查詢</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="m_s_r" id="rightCnt">
+        <div class="m_cnt_m">
+          <h2>學籍學歷查詢範圍</h2>
+          <a id="1" name="1"></a>
+          <h3>&gt;&gt;學籍查詢範圍</h3>
+          <p>國家承認的各類高等教育在籍學生的學籍註冊資訊（不含自考），以及2001年以來的學籍檔案（已離校學生在籍期間的學籍註冊資訊）。</p>
+          <p>學籍查詢服務僅提供給學生本人，需實名註冊後進入使用。</p>
+          <div class="line margin01">&nbsp;</div>
+          <a id="2" name="2"></a>
+          <h3>&gt;&gt;學歷查詢範圍</h3>
+          <p>2001年以來國家承認的各類高等教育學歷證書電子註冊資訊（含學歷證明書）。包括研究生、普通本專科、成人本專科（
+            <a href="javascript:void(0);" class="colorBlue">註冊進度</a>）、網路教育（
+            <a href="javascript:void(0);" class="colorBlue">註冊進度</a>）、開放教育、高等教育自學考試（
+            <a href="javascript:void(0);" class="colorBlue">註冊進度</a>）以及高等教育學歷文憑考試（
+            <a href="javascript:void(0);" class="colorBlue">註冊進度</a>）等。
+          </p>
+          </div>
+        <div class="m_cnt_m">
+          <h2>學歷查詢-本人查詢</h2>註冊
+          <a href="http://chaindesk.cn" target="_blank" class="color01">GAMA帳號</a>，登錄
+          <a href="javascript:void(0);" class="color01">徵信檔案</a>，即可免費查詢本人學歷。
+        </div>
+        <div class="m_cnt_m">
+          <h2>學歷查詢-零散查詢</h2>
+          <p>通過學信網
+            <a href="javascript:void(0);" class="color01">學歷查詢</a>欄目查詢學歷。
+            <br>
+            <br></p>
+          <a id="1" name="1"></a>
+          <h3>&gt;&gt;學歷查詢範圍</h3>
+          <p>
+            <strong>問：網站學歷查詢系統
+              <span class="colorRed">能查哪些學歷？</span></strong>
+          </p>
+          <p>答：點選查看
+            <a href="javascript:void(0);">學歷查詢範圍</a>。</p>
+          <p>
+            <strong>問：網站學歷查詢系統可以
+              <span class="colorRed">查詢學位證書</span>嗎？</strong></p>
+          <p>答：網站學歷查詢系統只能查詢畢業生學歷證書電子註冊資訊，不能查詢學位。</p>
+          <div class="line margin01">&nbsp;</div>
+          <a id="2" name="2"></a>
+          <h3>&gt;&gt;學歷查詢方法</h3>
+          <p>
+            <strong>問：
+              <span class="colorRed">如何使用學歷查詢系統</span>？</strong></p>
+          <p>答：輸入證書編號、姓名、圖片驗證碼三項，點選“查詢”按鈕即可。其中證書編號和姓名須與畢業證書上的資訊一致。</p>
+          <p>
+            <strong>問：
+              <span class="colorRed">證書編號</span>一欄應該輸入什麼？</strong></p>
+          <p>答：不同高校的畢業證書上關於證書編號的稱謂可能不盡相同，但都是一組17 位或 18 位的數字，這組數字就是 “證書編號”。早期畢業證上的編號可能不足 17 位，如實輸入即可。</p>
+          <p>
+            <strong>問：為什麼
+              <span class="colorRed">必須輸入驗證碼</span>？</strong></p>
+          <p>答：驗證碼是學歷查詢系統提供的一種基本的安全防範措施，其根本目的在於杜絕一些非法用戶採用程序提交等手段攻擊系統，確保合法用戶的正常使用。驗證碼必須與圖片中給出的四個數字一致。</p>
+          <p>
+            <strong>問：
+              <span class="colorRed">提示驗證碼有誤</span>怎么办？</strong></p>
+          <p>答：驗證碼就是輸入框右側顯示的四個數字，均為半角數字，請將輸入法切換至英文模式或半角狀態下輸入。若驗證碼沒有正常顯示，可嘗試刷新頁面。</p>
+          <div class="line margin01">&nbsp;</div>
+          <a id="3" name="3"></a>
+          <h3>&gt;&gt;學歷查詢結果</h3>
+          <p>
+            <strong>問：我正確輸入了證書編號和姓名，為何
+              <span class="colorRed">查不到學歷</span>？</strong></p>
+          <p>答：有可能學校漏報數據或者學校上報的資料有誤，具體情況可聯繫畢業院校學籍學歷管理部門。</p>
+          <p>
+            <strong>問：
+              <span class="colorRed">查到了學歷，但信息有誤</span>怎麼辦？</strong></p>
+          <p>答：請聯繫畢業院校學籍學歷管理部門申請修改。學信網無權直接修改資料。</p>
+          <p>
+            <strong>問：
+              <span class="colorRed">查詢內容顯示為“*”</span>是什麼意思？</strong></p>
+          <p>答：學歷註冊資料如果內容不完整將用星號（
+            <span class="colorRed">“*”</span>）代替。</p>
+          <p>
+            <strong>問：查到學歷後，點"
+              <span class="colorRed">查看學歷認證報告</span>"，為什麼報告上有"虛擬"兩個字?</strong></p>
+          <p>答：這說明尚未申請辦理學歷認證報告，看到的只是報告樣式。</p>
+          <p>
+            <strong>問：學歷查詢系統為什麼會
+              <span class="colorRed">出現空白頁面</span>？</strong></p>
+          <p>答：由於 Windows 98 和 Windows Me 系統中的 IE 不能很好的支持大字符集，因此當您使用以上系統時，請在“查看 -&gt; 編碼”選單中把編碼設為“自動選擇”，以免出現空白頁面或換台電腦登錄。</p>
+          <p>
+            <strong>問：
+              <span class="colorRed">結業證書</span>資訊如何更新為畢業證書資訊？</strong></p>
+          <p>答：若確已取得畢業證書，請聯繫畢業院校學籍學歷管理部門申請修正。</p>
+          <div class="line margin01">&nbsp;</div>
+          <a id="4" name="4"></a>
+          <h3>&gt;&gt;其他相關問題</h3>
+          <p>
+            <strong>問：畢業證書丟失，如何
+              <span class="colorRed">補辦畢業證</span>？</strong></p>
+          <p>答：請聯繫畢業院校學籍學歷管理部門補辦畢業證明書。</p>
+          <p>
+            <strong>問：如何得知
+              <span class="colorRed">某種學歷國家是否承認</span>？</strong></p>
+          <p>答：取得畢業證後登錄網上查詢或經過學歷認證才能確認。</p>
+          <p>
+            <strong>問：
+              <span class="colorRed">某學校是否為國家承認</span>的學校？</strong></p>
+          <p>答：請諮詢當地教育主管部門。</p>
+        </div>
+        <div class="m_cnt_m">
+          <h2>學歷查詢-企業用戶查詢</h2>在學信網
+          <a href="javascript:void(0);" class="color01">學信就業</a>註冊成為會員後進行學歷查詢。
+          <a href="javascript:void(0);" class="color01">詳情 &gt;&gt;</a>
+          <br>
+          <br>
+          <p>
+            <strong>問：企業會員的學歷查詢範圍？</strong></p>
+          <p>答：點選查看
+            <a href="javascript:void(0);">學歷查詢範圍</a>。</p>
+          <p>
+            <strong>問：如何申請企業會員？</strong></p>
+          <p>答：點選查看
+            <a href="javascript:void(0);">“企業用戶申請及學信卡購買流程”</a>
+            <br></p>
+          <p>
+            <strong>問：什麼是學信卡？&nbsp;</strong></p>
+          <p>答：學信卡是企業賬戶餘額的儲值卡，購卡流程詳見
+            <a href="javascript:void(0);">“企業用戶申請及學信卡購買流程”</a>。</p>
+          <p>
+            <strong>問：為什麼學信卡會儲值不成功？</strong></p>
+          <p>答：輸入密碼時注意區分數字及字母大小寫，例如：數字“0”與字母“o”、 數字“1”與字母“i”容易混淆。若還不可正常儲值，可聯繫客服人員，提供卡號和密碼進行確認。</p>
+          <p>
+            <strong>問：學信卡面值多少？有何區別麼？</strong></p>
+          <p>答：面值為200元、500元、1000、2000元。執行統一收費標準，功能完全相同。</p>
+          <p>
+            <strong>問：學信卡是否有有效期限？</strong></p>
+          <p>答：學信卡沒有儲值使用有效期，儲值成功後用來支付企業用戶的“機構用戶服務費”及其他收費服務。</p>
+          <p>
+            <strong>問：企業用戶查詢學歷是否有限制？</strong></p>
+          <p>答：詳見
+            <a href="javascript:void(0);">會員權益</a>。</p>
+          <p>
+            <strong>問：企業會員的用戶名或密碼忘記如何處理？</strong></p>
+          <p>答：企業找回用戶名或密碼，請發送
+            <a  href="javascript:void(0);">《企業會員帳號查找申請單》</a>（須加蓋單位公章）傳真至：02-2658-xxxx處理。若無法提供準確的註冊資訊，也可將原申請單位會員的發票連同申請單一起傳真。</p>
+          </div>
+        <div class="m_cnt_m"></div>
+        <div class="m_cnt_m"></div>
+        <div class="m_cnt_m">
+          <h2>學籍電子註冊相關疑問解答</h2>
+          <strong>本網專訪教育部高校學生司副巡視員xxx</strong>
+          <br>
+          <br>
+          <strong>背景：政策出台，將招生資格、招生計劃與學籍、學歷電子註冊掛鉤</strong>
+          <br>
+          <br>2006年1月24日教育部、國家發改委發出《關於編報2006年普通高等教育分學校分專業招生計劃的通知》，《通知》明確：為規範普通高校辦學秩序和辦學行為，嚴格實行高校招生資格、招生計劃與學生學籍電子註冊和網上畢業證書查詢相掛鉤，切實維護招生計劃管理的嚴肅性。 《通知》對招生計劃的管理做出了嚴格的規定。
+          <br>
+          <br>
+          <strong>問：什麼是學籍？怎樣才能取得學籍？</strong>
+          <br>答：學籍是學生在校學習資格的認可，取得學生身份和獲得學習資格首先要取得學籍。教育部第21號部長令發布的《普通高等學校學生管理規定》規定，按國家招生規定錄取的新生，持錄取通知書按學校有關要求和規定的期限到校辦理入學手續，學校在三個月內按照國家招生規定對其進行複查。複查合格者，予以註冊，取得學籍。該《規定》明確高校學生取得學籍的前提是“按國家招生規定錄取”，即參加高考經省級招辦辦理錄取手續的學生才有可能取得錄取學校的學籍。
+          <br>
+          <br>
+          <strong>問：為什麼要實行高校學籍電子註冊？學籍怎麼進行電子注冊？</strong>
+          <br>答：近年來，有少數高校無視國家規定，擅自擴大招生計劃，不經省級招辦自行錄取新生，這是嚴重的違規行為，破壞了國家招生製度，違背了高等教育的公平、公正原則，擾亂了高等教育辦學秩序，對此，必須堅決予以製止。因此，教育部明確從2006年開始實行學生學籍電子註冊。
+          <br>學籍電子註冊，即當年省級招辦錄取結束後，將各高校在本省（自治區、直轄市）錄取的新生數據報教育部。教育部在網上公佈各高校經省級招辦錄取的新生名單，各高校在新生入校後上網核對本校錄取名單，網上有的學生即予註冊，取得學籍。網上沒有的學生要么是省級招辦上報錄取數據有誤，要么是自行錄取。居於前者，學校要及時與學生來源省級招辦復核更正；居於後者，即學校違規招生，必須及時處理，否則，待學生學習結束髮不了畢業證書，學校要承擔由此引起的後果及責任。因為，國家實行了學歷證書電子註冊制度，學生畢業時所取得畢（結）業證書要報教育部電子註冊並上網供社會查詢。而每一份畢（結）業證書電子註冊的依據是學生學籍電子註冊的數據檔案。
+          <br>
+          <br>
+          <strong>問：實行高校學籍電子註冊有什麼意義？</strong>
+          <br>答：實行高校學籍電子註冊對行政管理決策和社會服務都具有很重要的意義，它不僅可以規範高校招生秩序和辦學行為，而且可以掌握每年高校新生入學報到率和註冊情況，為國家製定年度招生計劃和宏觀調控提供科學依據。此外也是促進學歷證書電子註冊工作在管理和功能上的又一次重大跨越，並為提高公共服務水平創造條件。
+          <br>
+          <br>
+          <strong>問：什麼時候開始實行高校學籍電子註冊？</strong>
+          <br>答：教育部將從2006年下半年開始實行高校學籍電子註冊，相關的政策文件將於今年暑期正式出台，配套的技術準備工作也已接近尾聲。其實這項工作已經進行了兩年的試點，從2004年高校新生入學開始，教育部就實行了網上新生名單核對工作，而學籍電子註冊工作是對新生名單核對工作的進一步規範和延伸，把在校生管理也涵蓋起來。這樣從高校招生網上錄取，延伸到高校學籍電子註冊、在校生管理，然後與學歷證書電子註冊工作接軌，從而實現高校學生全程網絡化管理。
+          <br>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      // 内容
+      var divs = $('#rightCnt>div');
+      // 点击事件
+      for (var i = 0; i < divs.length; i++) {
+        (function(i) {
+            $('#leftMenu .leftMenu'+i).click(function() {
+              $('#leftMenu li').removeClass('current');
+              $(this).addClass('current');
+              divs.css('display','none');
+              divs.eq(i).css('display','block');
+            })
+        })(i)
+      }
+      $('.index').trigger('click');
+    })
+  </script>
+</html>
+

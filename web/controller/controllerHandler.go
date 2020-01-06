@@ -88,7 +88,7 @@ func (app *Application) AddEduShow(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "addEdu.html", data)
 }
 
-// 增加資訊
+// 新增資訊
 func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
 	edu := service.Education{
@@ -127,7 +127,7 @@ func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 	if err != nil {
 		data.Msg = err.Error()
 	}else{
-		data.Msg = "資訊增加成功:" + transactionID
+		data.Msg = "資訊新增成功:" + transactionID
 	}*/
 
 	//ShowView(w, r, "addEdu.html", data)
@@ -224,7 +224,7 @@ func (app *Application) FindByID(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "queryResult.html", data)
 }
 
-// 修改/增加新資訊
+// 修改/新增新資訊
 func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	// 依據證書編號和姓名查詢
 	certNo := r.FormValue("certNo")
@@ -254,7 +254,7 @@ func (app *Application) ModifyShow(w http.ResponseWriter, r *http.Request)  {
 	ShowView(w, r, "modify.html", data)
 }
 
-// 修改/增加新資訊
+// 修改/新增新資訊
 func (app *Application) Modify(w http.ResponseWriter, r *http.Request) {
 	edu := service.Education{
 		Name:r.FormValue("name"),
@@ -293,7 +293,7 @@ func (app *Application) Modify(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		data.Msg = err.Error()
 	}else{
-		data.Msg = "新資訊增加成功!:" + transactionID
+		data.Msg = "新資訊新增成功!:" + transactionID
 	}
 
 	ShowView(w, r, "modify.html", data)

@@ -40,7 +40,7 @@ func WebStart(app controller.Application)  {
 
 	http.HandleFunc("/upload", app.UploadFile)
 
-	fmt.Println("啟用Web服務,監聽埠為: 9000")
+	fmt.Println("啟用Web服務,Listen port: 9000")
 	err := http.ListenAndServe(":9000", nil)
 	if err != nil {
 		fmt.Printf("Web服務啟用失敗!: %v", err)

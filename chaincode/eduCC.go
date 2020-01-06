@@ -92,7 +92,7 @@ func getEduByQueryString(stub shim.ChaincodeStubInterface, queryString string) (
 
 }
 
-// 增加訊息
+// 新增訊息
 // args: educationObject
 // 身份證號為key, Education為value
 func (t *EducationChaincode) addEdu(stub shim.ChaincodeStubInterface, args []string) peer.Response {
@@ -122,7 +122,7 @@ func (t *EducationChaincode) addEdu(stub shim.ChaincodeStubInterface, args []str
 		return shim.Error(err.Error())
 	}
 
-	return shim.Success([]byte("增加成功!"))
+	return shim.Success([]byte("新增成功!"))
 }
 
 // 依據證書編號及姓名查詢

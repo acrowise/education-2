@@ -24,7 +24,7 @@ func (t *EducationChaincode) Invoke(stub shim.ChaincodeStubInterface) peer.Respo
 	fun, args := stub.GetFunctionAndParameters()
 
 	if fun == "addEdu"{
-		return t.addEdu(stub, args)	// 增加訊息
+		return t.addEdu(stub, args)	// 新增訊息
 	}else if fun == "queryEduByCertNoAndName" {
 		return t.queryEduByCertNoAndName(stub, args)	// 依據證書編號及姓名查詢
 	}else if fun == "queryEduInfoByEntityID" {
